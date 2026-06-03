@@ -1,5 +1,5 @@
 /*
-SQLyog Community v13.0.1 (64 bit)
+SQLyog Community v13.3.1 (64 bit)
 MySQL - 10.4.32-MariaDB : Database - monitoring_suhu
 *********************************************************************
 */
@@ -70,15 +70,19 @@ CREATE TABLE `riwayat_monitoring` (
   `aqi` int(11) DEFAULT NULL,
   `kategori` varchar(50) DEFAULT NULL,
   `waktu_data` datetime DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `riwayat_monitoring` */
 
-insert  into `riwayat_monitoring`(`id`,`wilayah`,`suhu`,`aqi`,`kategori`,`waktu_data`) values 
-(1,'Jakarta Pusat',32.50,115,'Tidak Sehat','2026-05-22 22:39:44'),
-(2,'Jakarta Pusat',32.50,115,'Tidak Sehat','2026-05-22 22:52:29'),
-(3,'Kemayoran, Indonesia',32.50,154,'Berbahaya','2026-05-23 00:59:28');
+insert  into `riwayat_monitoring`(`id`,`wilayah`,`suhu`,`aqi`,`kategori`,`waktu_data`,`status`,`created_at`) values 
+(1,'Jakarta Pusat',32.50,115,'Tidak Sehat','2026-05-22 22:39:44','Tidak Sehat','2026-06-03 23:36:59'),
+(3,'Kemayoran, Indonesia',32.50,154,'Berbahaya','2026-05-23 00:59:28','Berbahaya','2026-06-03 23:36:59'),
+(4,'Jakarta',29.00,161,NULL,NULL,'Berbahaya','2026-06-03 23:57:04'),
+(5,'Jakarta Pusat',29.00,176,'Merah','2026-06-03 18:00:00','Berbahaya','2026-06-03 20:08:10'),
+(6,'Jakarta Pusat',29.00,176,'Merah','2026-06-03 18:00:00','Berbahaya','2026-06-03 20:08:23');
 
 /*Table structure for table `users` */
 
